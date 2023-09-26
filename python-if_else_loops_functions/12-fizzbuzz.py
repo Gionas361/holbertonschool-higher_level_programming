@@ -8,5 +8,5 @@ def fizzbuzz():
 		if ((num % 3) != 0) and ((num % 5) != 0):
 			print(num, end="")
 		if (num != 100):
-			print(" ", end="")
+			print(" $", end="")
 		num = num + 1
