@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     import sys
+
     result = 0
     arg = 0
     currarg = 0
