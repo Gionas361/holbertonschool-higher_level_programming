@@ -7,6 +7,5 @@ def fizzbuzz():
             print("Buzz", end="")
         if ((num % 3) != 0) and ((num % 5) != 0):
             print("{}".format(num), end="")
-        if (num != 100):
-            print(" ", end="")
+        print(" ", end="")
         num = num + 1
