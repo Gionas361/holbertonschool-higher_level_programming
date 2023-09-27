@@ -9,6 +9,4 @@ def fizzbuzz():
 			print("{}".format(num), end="")
 		if (num != 100):
 			print(" ", end="")
-		if (num == 100):
-			print(" $")
 		num = num + 1
