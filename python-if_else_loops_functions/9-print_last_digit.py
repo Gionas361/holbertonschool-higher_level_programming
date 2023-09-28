@@ -4,4 +4,4 @@ def print_last_digit(number):
         number = str(number)
     number = int(str(number)[-1:])
     print(number, end="")
-    return(number)
+    return (number)
