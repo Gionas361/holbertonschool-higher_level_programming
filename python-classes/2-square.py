@@ -13,5 +13,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
+
     def area(self, area):
+        """A R E A"""
         self.__area = area * area
