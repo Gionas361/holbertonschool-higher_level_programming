@@ -9,10 +9,12 @@ class Square:
         """Start new square"""
         self.__size = size
 
+    @property
     def size(self):
         """Determined sizw?"""
         return (self.__size)
 
+    @size.setter
     def size(self, value):
         """Squared size?"""
         if not isinstance(value, int):
