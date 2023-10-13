@@ -5,6 +5,8 @@
 class Rectangle:
     """Makes a rectangle"""
 
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """Initialize this b*tch"""
         type(self).number_of_instances += 1
