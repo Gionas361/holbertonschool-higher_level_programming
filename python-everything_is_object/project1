@@ -1,0 +1,8 @@
+#!/bin/bash
+touch README.md
+for i in {0..29};
+do
+    filename="${i}-answer.txt"
+    echo "Creating ${filename}:"
+    touch "${filename}"
+done
