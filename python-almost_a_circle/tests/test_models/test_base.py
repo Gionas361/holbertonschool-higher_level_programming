@@ -89,3 +89,6 @@ class TestBase_instantiation(unittest.TestCase):
     def test_two_args(self):
         with self.assertRaises(TypeError):
             Base(1, 2)
+
+if __name__ == "__main__":
+    unittest.main()
