@@ -20,6 +20,7 @@ def replace_html_entities(text):
 def login_and_scrape():
     base_url = "https://intranet.hbtn.io"
     login_url = f"{base_url}/auth/sign_in"
+    # Put the number of the project u want the main files of.
     dashboard_url = f"{base_url}/projects/2211"
 
     # Create a session to handle the cookies
@@ -37,7 +38,9 @@ def login_and_scrape():
     }
 
     login_data = {
+        # Put your own email here
         'user[login]': '6838@holbertonstudents.com',
+        # Put your own password
         'user[password]': 'pS!2zB&y8Bw4',
         'commit': 'Log in',
     }
