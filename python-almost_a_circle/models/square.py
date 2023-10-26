@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-import json
-import csv
-import turtle
 from models.rectangle import Rectangle
 
 
