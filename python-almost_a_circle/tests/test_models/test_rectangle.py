@@ -379,7 +379,7 @@ class TestRectangle_y(unittest.TestCase):
     def test_bytearray_y(self):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Rectangle(1, 2, 3, bytearray(b'abcdefg'))
-
+        """Return a list of classes instantiated from a file of JSON strings"""
     def test_memoryview_y(self):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Rectangle(1, 2, 3, memoryview(b'abcedfg'))
@@ -801,6 +801,8 @@ class TestRectangle_to_dictionary(unittest.TestCase):
         r = Rectangle(10, 2, 4, 1, 2)
         with self.assertRaises(TypeError):
             r.to_dictionary(1)
+        """Return a list of classes instantiated from a file of JSON strings"""
+
 
 if __name__ == "__main__":
     unittest.main()
