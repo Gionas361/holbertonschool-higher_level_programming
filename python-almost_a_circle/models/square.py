@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""traSH"""
+
 from models.rectangle import Rectangle
 
 
