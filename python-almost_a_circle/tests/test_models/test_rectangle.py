@@ -13,6 +13,7 @@ Unittest classes:
     TestRectangle_update_kwargs - line 676
     TestRectangle_to_dictionary - line 788
 """
+
 import io
 import sys
 import unittest

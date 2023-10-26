@@ -13,6 +13,7 @@ Unittest classes:
     TestSquare_update_kwargs - line 538
     TestSquare_to_dictionary - 640
 """
+
 import io
 import sys
 import unittest
