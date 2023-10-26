@@ -21,7 +21,7 @@ def login_and_scrape():
     base_url = "https://intranet.hbtn.io"
     login_url = f"{base_url}/auth/sign_in"
     # Put the number of the project u want the main files of.
-    dashboard_url = f"{base_url}/projects/2211"
+    dashboard_url = f"{base_url}/projects/2182"
 
     # Create a session to handle the cookies
     session = requests.Session()
@@ -63,8 +63,8 @@ def login_and_scrape():
         print("Login failed.")
 
 def makefile(html_content):
-    # Use a regular expression to find instances of "-main.py" and the code following it
-    code_coordination = re.findall(r'-main.py([\s\S]*?)guillaume@ubuntu:~/\$', html_content)
+    # Use a regular expression to find instances of "number-main.py" and the code following it
+    code_coordination = re.findall(r'(\d+)-main.py([\s\S]*?)guillaume@ubuntu:~/\$', html_content)
 
     # Create a directory named "mains"
     os.makedirs("mains", exist_ok=True)
@@ -77,21 +77,18 @@ def makefile(html_content):
             # Replace instances of &quot;&quot;&quot; with three double quotations
             code_match = code_match.replace('&quot;&quot;&quot;', '"""')
 
-            # Extract the filename based on "-main" and the number before it
-            filename_match = re.search(r'(\d+)-main', code_match)
-            if filename_match:
-                filename = f"mains/{filename_match.group(1)}-main.py"  # Set the filename
-                with open(filename, 'w') as file:
-                    # Replace common HTML entities with characters
-                    cleaned_code = replace_html_entities(code_match)
-                    file.write(cleaned_code)
-                print(f"Code snippet {i} saved to {filename}")
-            else:
-                print(f"Filename not found in code snippet {i}, skipping.")
+        # Extract the filename based on the captured number and "-main" pattern
+        filename_match = re.search(r'(\d+)-main', code_match)
+        if filename_match:
+            project_number = filename_match.group(1)
+            filename = f"mains/{project_number}-main.py"  # Set the filename
+            with open(filename, 'w') as file:
+                # Replace common HTML entities with characters
+                cleaned_code = replace_html_entities(code_match)
+                file.write(cleaned_code)
+            print(f"Code snippet {i} saved to {filename}")
         else:
-            # You can skip even code snippets by not processing them
-            print(f"Skipping code snippet {i}")
-
+            print(f"Filename not found in code snippet {i}, skipping.")
 
 if __name__ == "__main__":
     login_and_scrape()
