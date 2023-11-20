@@ -12,6 +12,7 @@ def replace_html_entities(text):
         '&amp;': '&',
         '&lt;': '<',
         '&gt;': '>',
+        '&#39;': '\''
     }
     for entity, char in html_entities.items():
         text = text.replace(entity, char)
@@ -20,8 +21,8 @@ def replace_html_entities(text):
 def login_and_scrape():
     base_url = "https://intranet.hbtn.io"
     login_url = f"{base_url}/auth/sign_in"
-    # Put the number of the project u want the main files of.
-    dashboard_url = f"{base_url}/projects/2182"
+    # Put the number of the project you want the main files of.
+    dashboard_url = f"{base_url}/projects/2211"
 
     # Create a session to handle the cookies
     session = requests.Session()
@@ -63,25 +64,22 @@ def login_and_scrape():
         print("Login failed.")
 
 def makefile(html_content):
-    # Use a regular expression to find instances of "number-main.py" and the code following it
-    code_coordination = re.findall(r'(\d+)-main.py([\s\S]*?)guillaume@ubuntu:~/\$', html_content)
+    # Use a regular expression to find instances of "-main.py" and the code following it
+    code_coordination = re.findall(r'\d+-main.py([\s\S]*?)guillaume@ubuntu:~/\$', html_content)
 
     # Create a directory named "mains"
     os.makedirs("mains", exist_ok=True)
 
-    for i, code_match in enumerate(code_coordination, start=1):
-        # Save odd code snippets to separate files
-        if i % 2 == 1:
-            code_match = code_match.strip()
+    for i, code_match in enumerate(code_coordination, start=0):
+        code_match = code_match.strip()
 
-            # Replace instances of &quot;&quot;&quot; with three double quotations
-            code_match = code_match.replace('&quot;&quot;&quot;', '"""')
+        # Replace instances of &quot;&quot;&quot; with three double quotations
+        code_match = code_match.replace('&quot;&quot;&quot;', '"""')
 
-        # Extract the filename based on the captured number and "-main" pattern
+        # Extract the filename based on "-main" and the number before it
         filename_match = re.search(r'(\d+)-main', code_match)
         if filename_match:
-            project_number = filename_match.group(1)
-            filename = f"mains/{project_number}-main.py"  # Set the filename
+            filename = f"mains/{filename_match.group(1)}-main.py"  # Set the filename
             with open(filename, 'w') as file:
                 # Replace common HTML entities with characters
                 cleaned_code = replace_html_entities(code_match)
