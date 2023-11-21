@@ -3,6 +3,8 @@ import random
 import sys
 
 
+print("Heads = \U0001F60D")
+print("Tails = \U0001F976")
 aguments = sys.argv
 
 def Flips(amount):
@@ -13,9 +15,9 @@ def Flips(amount):
         Head_or_Tails = random.randint(0,1)
 
         if Head_or_Tails == 0:
-            print('The coin number', i+1, 'landed on \U0001F60D')
+            print('\nThe coin number', i+1, 'landed on \U0001F60D')
         elif Head_or_Tails == 1:
-            print('The coin number', i+1, 'landed on \U0001F976')
+            print('\nThe coin number', i+1, 'landed on \U0001F976')
 
         i += 1
 
