@@ -19,10 +19,10 @@ def Flips(amount):
 def Argument_Check(aguments):
     if len(aguments) > 2:
         return (print("Too many arguments."))
-    elif len(aguments) == 1:
-        Flips(aguments[1])
     elif len(aguments) < 1:
         return (print("Please provide a number of times to flip the coin."))
+    elif len(aguments) == 1:
+        Flips(aguments[1])
 
 
 # //////////////////////////// Tests ///////////////////////////
