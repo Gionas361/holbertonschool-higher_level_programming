@@ -13,9 +13,9 @@ def Flips(amount):
         Head_or_Tails = random.randint(0,1)
 
         if Head_or_Tails == 0:
-            print('In the flip number:', i+1, '\n  The coin landed on \U0001F60D\n')
+            print('The coin number', i+1, 'landed on \U0001F60D')
         elif Head_or_Tails == 1:
-            print('In the flip number:', i+1, '\n  The coin landed on \U0001F976\n')
+            print('The coin number', i+1, 'landed on \U0001F976')
 
         i += 1
 
