@@ -4,7 +4,7 @@ import sys
 
 aguments = sys.argv
 print("Got the arguments: ", len(aguments))
-for i in {0 : len(aguments)}:
+for i in {0 : len(aguments)+1}:
     print(aguments[i])
 
 def Flips(amount):
