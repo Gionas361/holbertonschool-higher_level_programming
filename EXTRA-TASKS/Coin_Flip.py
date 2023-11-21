@@ -4,19 +4,22 @@ import sys
 
 aguments = sys.argv
 print("Got the arguments: ", len(aguments))
-for i in {0 : len(aguments)+1}:
+while i <= len(aguments):
     print(aguments[i], i)
+    i += 1
 
 def Flips(amount):
     Head_or_Tails = 0
 
-    for i in amount:
+    while i <= amount:
         Head_or_Tails = random.randint(0,1)
 
         if Head_or_Tails == 0:
             print('The flip number: ', i+1, 'The coin landed on HEADS!!!')
         elif Head_or_Tails == 1:
             print('The flip number: ', i+1, 'The coin landed on Tails!!!')
+
+        i += 1
 
 
 def Argument_Check(aguments):
