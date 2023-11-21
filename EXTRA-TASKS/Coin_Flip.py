@@ -24,4 +24,4 @@ def Argument_Check(aguments):
 
 
 # //////////////////////////// Tests ///////////////////////////
-Argument_Check(sys.aguments)
+Argument_Check(aguments)
