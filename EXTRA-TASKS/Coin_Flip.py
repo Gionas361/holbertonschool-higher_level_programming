@@ -4,6 +4,8 @@ import sys
 
 aguments = sys.argv
 print("Got the arguments: ", len(aguments))
+for i in len(aguments)
+    print(aguments[i+1])
 
 def Flips(amount):
     Head_or_Tails = 0
