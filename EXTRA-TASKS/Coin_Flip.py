@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 import random
 import sys
-from termcolor import colored
 
 
-print(colored('hello', 'red'), colored('world', 'green'))
+print ('\U0001F603')
 aguments = sys.argv
 
 def Flips(amount):
