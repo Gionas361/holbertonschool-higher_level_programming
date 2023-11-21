@@ -2,12 +2,8 @@
 import random
 import sys
 
+
 aguments = sys.argv
-print("Got the arguments: ", len(aguments))
-i = 0
-while i <= len(aguments)-1:
-    print(aguments[i], i, len(aguments)-1)
-    i += 1
 
 def Flips(amount):
     Head_or_Tails = 0
