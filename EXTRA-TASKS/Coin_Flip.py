@@ -3,6 +3,7 @@ import random
 import sys
 
 aguments = sys.argv
+print("Got the arguments: ", len(aguments))
 
 def Flips(amount):
     Head_or_Tails = 0
