@@ -30,7 +30,7 @@ def Argument_Check(aguments):
     elif len(aguments) == 1:
         return (print("Please provide a number of times to flip the coin."))
     elif len(aguments) == 2:
-        Flips(aguments[2])
+        Flips(aguments[1])
 
 
 # //////////////////////////// Tests ///////////////////////////
