@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 import random
 import sys
+from termcolor import colored
 
 
-print(bcolors.WARNING + "Warning: No active frommets remain. Continue?" + bcolors.ENDC)
+print colored('hello', 'red'), colored('world', 'green')
 aguments = sys.argv
 
 def Flips(amount):
