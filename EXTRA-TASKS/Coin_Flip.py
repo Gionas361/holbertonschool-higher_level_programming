@@ -13,7 +13,7 @@ def Flips(amount):
     Head_or_Tails = 0
     i = 0
 
-    while i <= amount:
+    while i < amount:
         Head_or_Tails = random.randint(0,1)
 
         if Head_or_Tails == 0:
