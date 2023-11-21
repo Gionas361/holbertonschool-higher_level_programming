@@ -3,6 +3,7 @@ import random
 import sys
 
 
+print(bcolors.WARNING + "Warning: No active frommets remain. Continue?" + bcolors.ENDC)
 aguments = sys.argv
 
 def Flips(amount):
