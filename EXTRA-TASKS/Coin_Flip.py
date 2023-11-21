@@ -4,7 +4,7 @@ import sys
 from termcolor import colored
 
 
-print colored('hello', 'red'), colored('world', 'green')
+print(colored('hello', 'red'), colored('world', 'green'))
 aguments = sys.argv
 
 def Flips(amount):
