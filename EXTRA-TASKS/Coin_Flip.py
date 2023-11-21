@@ -6,7 +6,7 @@ aguments = sys.argv
 print("Got the arguments: ", len(aguments))
 i = 0
 while i <= len(aguments):
-    print(aguments[i], i)
+    print(aguments[i], i, len(aguments))
     i += 1
 
 def Flips(amount):
