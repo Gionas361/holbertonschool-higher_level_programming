@@ -206,6 +206,7 @@ def CPU_AI(gameturn, mode):
                     p += 1
                     c = 0
                     if addit == 2:
+                        print('it was noticed')
                         p = 0
                         while p < 3:
                             if int(p) < 10:
@@ -213,10 +214,8 @@ def CPU_AI(gameturn, mode):
                                 foundpath[1] = Wpos[w][p]
                             else:
                                 foundpath = [int(i) for i in str(Wpos[w][p])]
-                                print(foundpath[0], foundpath[1])
+                            print(foundpath[0], foundpath[1])
                             Table[int(foundpath[0])][int(foundpath[1])] = Os
-
-                            break
                 w += 1
                 p = 0
 
