@@ -15,6 +15,7 @@ aguments = sys.argv
 def RockPaperCut(amount, player):
     # It will print each coin flip based on
     # the number provided but Argument_Check.
+    print("Ran RPC function.")
 
     i = 0
 
