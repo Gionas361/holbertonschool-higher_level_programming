@@ -141,7 +141,7 @@ def Turn_Playouts():
         gameturn += 1
 
         if turn == 0:
-            print("It's the cpu's turn:")
+            print(f"It's the cpu's turn: [{gameturn}]")
             CPU_AI(gameturn)
             PrintOutTable()
             gamened = Win_Check()
@@ -149,7 +149,7 @@ def Turn_Playouts():
             turn = 1
 
         if turn == 1:
-            print("It's the player's turn:")
+            print(f"It's the player's turn: [{gameturn}]")
             Turn_Check()
             PrintOutTable()
             gameend = Win_Check()
