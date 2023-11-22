@@ -29,7 +29,7 @@ while i < 3:
 aguments = [0, 0]
 
 # Turn counter
-gameturn = 0
+game-turn = 0
 
 
 # Functions:
@@ -139,7 +139,7 @@ def Turn_Playouts():
     gameend = 0
 
     while gameend == 0:
-        gameturn += 1
+        game-turn += 1
 
         if turn == 0:
             print("It's the cpu's turn:")
@@ -160,6 +160,6 @@ def Turn_Playouts():
 # /////////////////////////////// Tests ///////////////////////////////////
 # First turn always goes to cpu
 Table[1][1] = Os
-gameturn += 1
+game-turn += 1
 PrintOutTable()
 Turn_Playouts()
