@@ -249,6 +249,7 @@ def Turn_Playouts():
 
 # /////////////////////////////// Tests ///////////////////////////////////
 # First turn always goes to cpu
+print("starto testo")
 Table[1][1] = Os
 PrintOutTable()
 Turn_Playouts()
