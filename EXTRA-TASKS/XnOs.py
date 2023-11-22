@@ -225,7 +225,7 @@ def Turn_Playouts():
     gameturn = 1
     mode = 0
 
-    while gameend == 0:
+    while gameend != 1:
         gameturn += 1
 
         if turn == 0:
