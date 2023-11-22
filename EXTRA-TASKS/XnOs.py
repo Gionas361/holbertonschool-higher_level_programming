@@ -103,11 +103,10 @@ def Win_Check():
     
     return (0)
 
-def CPU_AI(gameturn):
+def CPU_AI(gameturn, mode):
     location1 = 0
     location2 = 0
     location = 0
-    mode = 0
 
     curTab = []
     foundpath = []
@@ -115,6 +114,7 @@ def CPU_AI(gameturn):
     c2 = 0
 
     if gameturn == 3:
+        mode = 0
         if (Table[0][1] == Xs or Table[1][0] == Xs or Table[1][2] == Xs or Table[2][1] == Xs):
             # Win mode activate
             mode = 'WIN'
@@ -144,6 +144,8 @@ def CPU_AI(gameturn):
                     Table[2][0] = Os
                 if location == 1:
                     Table[2][2] = Os
+            
+            return (mode)
 
         if (Table[0][0] == Xs or Table[0][2] == Xs or Table[2][0] == Xs or Table[2][2] == Xs):
             # Tie mode activate
@@ -157,6 +159,8 @@ def CPU_AI(gameturn):
                 if (Table[location1][location2] == Boxes):
                     Table[location1][location2] = Os
                     openslot = 1
+
+            return (mode)
     
     if gameturn == 5:
         if mode == 'WIN':
@@ -189,19 +193,22 @@ def CPU_AI(gameturn):
                     break
                 addit = 0
 
+            return (mode)
+
 
 
 def Turn_Playouts():
     turn = 1
     gameend = 0
     gameturn = 1
+    mode = 0
 
     while gameend == 0:
         gameturn += 1
 
         if turn == 0:
             print(f"It's the cpu's turn: [{gameturn}]", end=" ")
-            CPU_AI(gameturn)
+            mode = CPU_AI(gameturn, mode)
             PrintOutTable()
             gamened = Win_Check()
 
