@@ -46,8 +46,8 @@ def Argument_Check(aguments):
         words = ['ROCK', 'SCISSOR', 'PAPER']
 
         while i <= len(words):
-            if upper(aguments[1]) == words[i]:
-                RockPaperCut(upper(aguments[1]))
+            if aguments[1].upper() == words[i]:
+                RockPaperCut(aguments[1].upper())
         print("Please provide a valid word:\n    Rock\n    Paper\n    Scissors\n")
 
 # //////////////////////////// Tests ///////////////////////////
