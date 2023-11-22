@@ -25,7 +25,7 @@ while i < 3:
         x += 1
     print()
     i += 1
-    x == 0
+    x = 0
 
 def TurnPlayouts():
     turn = 0
