@@ -167,6 +167,7 @@ def CPU_AI(gameturn):
                     if Table[i][x] != Boxes:
                         curTab[c1][c2].append(int(f'{i}{x}'))
                         curTab[c1][c2+1].append(Table[i][x])
+                        print(f'{curTab[c1][c2]} {curTab[c1][c2+1]}')
                     c1 += 1
                     x += 1
                 i += 1
