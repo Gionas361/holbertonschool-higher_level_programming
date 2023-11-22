@@ -41,6 +41,8 @@ def RockPaperCut(player):
         print(f"The CPU played {Rock}  You played {Rock}. It's a {Tie}")
     elif Hand == 2 and player == 'ROCK':
         print(f"The CPU played {Scissor}  You played {Scissor}. It's a {Tie}")
+    
+    break
 
 def Argument_Check(aguments):
     # It will check that a number is provided.
