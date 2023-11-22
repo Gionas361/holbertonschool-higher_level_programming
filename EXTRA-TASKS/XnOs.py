@@ -119,7 +119,7 @@ def CPU_AI():
                 if location == 1:
                     location == 2
 
-                if (Table[location1][location2] == Boxes)
+                if (Table[location1][location2] == Boxes):
                     Table[location1][location2] = Os
                     openslot = 1
             
