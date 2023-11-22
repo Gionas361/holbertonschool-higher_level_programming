@@ -3,12 +3,16 @@ import random
 import sys
 
 
+# Prints the guide to reading the results
 print("Heads = \U0001F31D")
 print("Tails = \U0001F31A")
 print("\n")
 aguments = sys.argv
 
 def Flips(amount):
+    # It will print each coin flip based on
+    # the number provided but Argument_Check.
+
     Head_or_Tails = 0
     i = 0
 
@@ -24,6 +28,8 @@ def Flips(amount):
 
 
 def Argument_Check(aguments):
+    # It will check that a number is provided.
+
     if len(aguments) > 2:
         return (print("Too many arguments."))
     elif len(aguments) == 1:
