@@ -209,7 +209,7 @@ def CPU_AI(gameturn, mode):
                         print('it was noticed')
                         p = 0
                         while p < 3:
-                            if Wpos[w][p] < 10:
+                            if int(Wpos[w][p]) < 10:
                                 foundpath[0] = 0
                                 foundpath[1] = Wpos[w][p]
                                 print('yesy', foundpath[0], foundpath[1])
