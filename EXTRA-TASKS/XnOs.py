@@ -162,3 +162,4 @@ def Turn_Playouts():
 Table[1][1] = Os
 gameturn += 1
 PrintOutTable()
+Turn_Playouts()
