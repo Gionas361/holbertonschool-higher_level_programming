@@ -190,32 +190,25 @@ def CPU_AI(gameturn, mode):
             # This determines if the player fucked up and if they did,
             # it will play the move that will win him the game.
             while w < 8: # Sets of 3 for victory
-                print(f'w: {w}')
                 addit = 0
                 while p < 3: # Nums inside the sets
-                    print(f'p: {p}')
                     while c < 9:
-                        print(f'c: {curTab[c][c2]} {Wpos[w][p]}')
                         if (int(curTab[c][c2]) == int(Wpos[w][p])):
                             if curTab[c][c2+1] != Xs:
                                 addit += 1
                             else:
                                 addit -= 1
-                            print(f'addit: {addit}')
                         c += 1
                     p += 1
                     c = 0
                     if addit == 2:
-                        print('it was noticed')
                         p = 0
                         while p < 3:
                             if int(Wpos[w][p]) < 10:
                                 foundpath[0] = 0
                                 foundpath[1] = Wpos[w][p]
-                                print('yesy', foundpath[0], foundpath[1])
                             elif int(Wpos[w][p]) > 10:
                                 foundpath = [int(i) for i in str(Wpos[w][p])]
-                                print('nopy', foundpath[0], foundpath[1])
                             Table[int(foundpath[0])][int(foundpath[1])] = Os
                             p += 1
                 w += 1
