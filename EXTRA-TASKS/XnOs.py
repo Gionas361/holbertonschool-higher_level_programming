@@ -21,8 +21,10 @@ x = 0
 while i < 3:
     while x < 3:
         Table[i][x] = Boxes
-        print(x, end = " ")
+        print(Table[i][x], end = " ")
+        x += 1
     print()
+    i += 1
 
 def TurnPlayouts():
     turn = 0
