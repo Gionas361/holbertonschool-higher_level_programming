@@ -200,6 +200,7 @@ def CPU_AI(gameturn, mode):
                                 addit += 1
                             else:
                                 addit -= 1
+                            print(f'addit: {addit}')
                         c += 1
                     p += 1
                     c = 0
