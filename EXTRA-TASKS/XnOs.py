@@ -105,7 +105,7 @@ def CPU_AI(gameturn):
     if gameturn == 3:
         if (Table[0][1] == Xs or Table[1][0] == Xs or Table[1][2] == Xs or Table[2][1]):
             # Win mode activate
-            openslot = 0
+            openslot = 1
 
             while openslot != 1:
                 location1 = random.randint(0,1)
