@@ -184,7 +184,7 @@ def CPU_AI(gameturn):
                     for p in w:
                         foundpath = [int(i) for i in str(p)]
                         Table[foundpath[0]][foundpath[1]] = Os
-                    break:
+                    break
                 addit = 0
                     
                         
