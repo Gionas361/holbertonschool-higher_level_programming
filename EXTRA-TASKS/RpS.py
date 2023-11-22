@@ -6,7 +6,8 @@ import sys
 # Variables containin the emojis the guide to reading the results
 Win = "\U0001F31D"
 Loss = "\U0001F31A"
-Scissor = "\U0002702"
+Tie = "\U0001F501"
+Scissor = "\U0001F52A"
 Paper = "\U0001F4DC"
 Rock = "\U0001F48E"
 aguments = sys.argv
@@ -18,18 +19,29 @@ def RockPaperCut(player):
 
     Hand = random.randint(0,2)
 
+    # Losses
     if Hand == 0 and player == 'ROCK':
         print(f"The CPU played {Paper} you played {Rock}. You've {Loss}")
     elif Hand == 1 and player == 'SCISSOR':
         print(f"The CPU played {Rock} you played {Scissor}. You've {Loss}")
     elif Hand == 2 and player == 'PAPER':
         print(f"The CPU played {Scissor} you played {Paper}. You've {Loss}")
+
+    # Wins
     elif Hand == 0 and player == 'SCISSOR':
         print(f"The CPU played {Paper} you played {Scissor}. You've {Win}")
     elif Hand == 1 and player == 'PAPER':
         print(f"The CPU played {Rock} you played {Paper}. You've {Win}")
     elif Hand == 2 and player == 'ROCK':
         print(f"The CPU played {Scissor} you played {Rock}. You've {Win}")
+
+    # Ties
+    elif Hand == 0 and player == 'Paper':
+        print(f"The CPU played {Paper} you played {Paper}. It's a {Tie}")
+    elif Hand == 1 and player == 'ROCK':
+        print(f"The CPU played {Rock} you played {Rock}. It's a {Tie}")
+    elif Hand == 2 and player == 'ROCK':
+        print(f"The CPU played {Scissor} you played {Scissor}. It's a {Tie}")
     
     sys.argv = ''
 
