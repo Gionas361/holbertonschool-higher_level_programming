@@ -219,7 +219,7 @@ def CPU_AI(gameturn, mode):
 
 
 def Turn_Playouts():
-    turn = 1
+    turn = 2
     gameend = 0
     gameturn = 1
     mode = 0
