@@ -33,6 +33,8 @@ def RockPaperCut(player):
     elif Hand == 2 and player == 'ROCK':
         print(f"The CPU played {Scissor} you played {Rock}. You've {Win}")
 
+    ran = 1
+
 def Argument_Check(aguments):
     # It will check that a number is provided.
     print("Ran Argument_Check.")
@@ -59,4 +61,3 @@ def Argument_Check(aguments):
 # //////////////////////////// Tests ///////////////////////////
 if ran == 0:
     Argument_Check(aguments)
-    ran = 1
