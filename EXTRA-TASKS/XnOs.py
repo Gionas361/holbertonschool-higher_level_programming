@@ -109,11 +109,11 @@ def CPU_AI(gameturn):
 
             while openslot != 1:
                 location1 = random.randint(0,1)
-                if location == 1:
-                    location == 2
+                if location1 == 1:
+                    location1 == 2
                 location2 = random.randint(0,1)
-                if location == 1:
-                    location == 2
+                if location2 == 1:
+                    location2 == 2
 
                 if (Table[location1][location2] == Boxes):
                     Table[location1][location2] = Os
@@ -147,8 +147,7 @@ def Turn_Playouts():
             gamened = Win_Check()
 
             turn = 1
-
-        if turn == 1:
+        elif turn == 1:
             print(f"It's the player's turn: [{gameturn}]")
             Turn_Check()
             PrintOutTable()
