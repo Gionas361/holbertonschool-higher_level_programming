@@ -210,9 +210,9 @@ def CPU_AI(gameturn, mode):
                         while p < 3:
                             if int(p) < 10:
                                 foundpath[0] = 0
-                                foundpath[1] = p
+                                foundpath[1] = Wpos[w][p]
                             else:
-                                foundpath = [int(i) for i in str(p)]
+                                foundpath = [int(i) for i in str(Wpos[w][p])]
                                 print(foundpath[0], foundpath[1])
                             Table[foundpath[0]][foundpath[1]] = Os
 
