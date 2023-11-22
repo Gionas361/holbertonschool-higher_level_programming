@@ -20,27 +20,27 @@ def RockPaperCut(player):
 
     # Losses
     if Hand == 0 and player == 'ROCK':
-        print(f"The CPU played {Paper};  you played {Rock}. You've {Loss}")
+        print(f"The CPU played {Paper}  You played {Rock}. You've {Loss}")
     elif Hand == 1 and player == 'SCISSOR':
-        print(f"The CPU played {Rock};  you played {Scissor}. You've {Loss}")
+        print(f"The CPU played {Rock}  You played {Scissor}. You've {Loss}")
     elif Hand == 2 and player == 'PAPER':
-        print(f"The CPU played {Scissor};  you played {Paper}. You've {Loss}")
+        print(f"The CPU played {Scissor}  You played {Paper}. You've {Loss}")
 
     # Wins
     elif Hand == 0 and player == 'SCISSOR':
-        print(f"The CPU played {Paper};  you played {Scissor}. You've {Win}")
+        print(f"The CPU played {Paper}  You played {Scissor}. You've {Win}")
     elif Hand == 1 and player == 'PAPER':
-        print(f"The CPU played {Rock};  you played {Paper}. You've {Win}")
+        print(f"The CPU played {Rock}  You played {Paper}. You've {Win}")
     elif Hand == 2 and player == 'ROCK':
-        print(f"The CPU played {Scissor};  you played {Rock}. You've {Win}")
+        print(f"The CPU played {Scissor}  You played {Rock}. You've {Win}")
 
     # Ties
     elif Hand == 0 and player == 'Paper':
-        print(f"The CPU played {Paper};  you played {Paper}. It's a {Tie}")
+        print(f"The CPU played {Paper}  You played {Paper}. It's a {Tie}")
     elif Hand == 1 and player == 'ROCK':
-        print(f"The CPU played {Rock};  you played {Rock}. It's a {Tie}")
+        print(f"The CPU played {Rock}  You played {Rock}. It's a {Tie}")
     elif Hand == 2 and player == 'ROCK':
-        print(f"The CPU played {Scissor};  you played {Scissor}. It's a {Tie}")
+        print(f"The CPU played {Scissor}  You played {Scissor}. It's a {Tie}")
 
 def Argument_Check(aguments):
     # It will check that a number is provided.
