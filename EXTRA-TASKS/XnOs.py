@@ -186,12 +186,8 @@ def CPU_AI(gameturn):
                         Table[foundpath[0]][foundpath[1]] = Os
                     break
                 addit = 0
-                    
-                        
 
 
-
-        if mode == 'TIE':
 
 def Turn_Playouts():
     turn = 1
