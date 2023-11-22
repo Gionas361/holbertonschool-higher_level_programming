@@ -48,15 +48,14 @@ def RockPaperCut(amount, player):
 def Argument_Check(aguments):
     # It will check that a number is provided.
 
-    if len(aguments) > 2:
+    if len(aguments) > 3:
         return (print("Too many arguments."))
-    elif len(aguments) == 1:
-        return (print("Please provide the hand you will use against CPU."))
-    elif len(aguments) == 2:
+    elif len(aguments) < 3:
+        return (print("Please provide the number of times to run the game and hand you will use against CPU."))
+    elif len(aguments) == 3:
         # If the number of arguments is the correct amount,
         # We create the array of words and then check if,
         # the word given is Rock, Paper or Scissors.
-        print("Detected correct amount of arguments.")
 
         i = 0
         words = ['ROCK', 'SCISSOR', 'PAPER']
