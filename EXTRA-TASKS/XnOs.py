@@ -104,6 +104,8 @@ def Win_Check():
     return (0)
 
 def CPU_AI(gameturn, mode):
+    # Variable declaration
+
     location1 = 0
     location2 = 0
     location = 0
@@ -122,12 +124,14 @@ def CPU_AI(gameturn, mode):
     p = 0
     c = 0
 
+    # They will check for the turn and act acordingly
     if gameturn == 3:
         mode = 0
         if (Table[0][1] == Xs or Table[1][0] == Xs or Table[1][2] == Xs or Table[2][1] == Xs):
             # Win mode activate
             mode = 'WIN'
 
+            # It will select one of the positions besides the one that the player chose
             if Table[0][1] == Xs:
                 location = random.randint(0,1)
                 if location == 0:
@@ -158,6 +162,8 @@ def CPU_AI(gameturn, mode):
             openslot = 0
             mode = 'TIE'
 
+            # It will result in CPU choosing any random position not already taken,
+            # if it is taken it will just generate another slot to play in.
             while openslot != 1:
                 location1 = random.randint(0,2)
                 location2 = random.randint(0,2)
@@ -166,8 +172,11 @@ def CPU_AI(gameturn, mode):
                     Table[location1][location2] = Os
                     openslot = 1
     
+    # Turn 5 actions
     if gameturn == 5:
         if mode == 'WIN':
+
+            # It will store where each player has put a mark
             while i < 3:
                 while x < 3:
                     if Table[i][x] != Boxes:
@@ -179,11 +188,13 @@ def CPU_AI(gameturn, mode):
                 i += 1
                 x = 0
 
+            # This determines if the player fucked up and if they did,
+            # it will play the move that will win him the game.
             while w <= 8: # Sets of 3 for victory
                 while p <= 3: # Nums inside the sets
                     while c <= 9:
-                        if curTab[c][0] == Wpos[w][p]:
-                            if curTab[c][1] != Xs:
+                        if curTab[c][c2] == Wpos[w][p]:
+                            if curTab[c][c2+1] != Xs:
                                 addit += 1
                             else:
                                 addit -= 1
@@ -193,6 +204,7 @@ def CPU_AI(gameturn, mode):
                 w += 1
                 p = 0
                 if addit == 2:
+                    p = 0
                     while p <= 3:
                         foundpath = [int(i) for i in str(p)]
                         Table[foundpath[0]][foundpath[1]] = Os
