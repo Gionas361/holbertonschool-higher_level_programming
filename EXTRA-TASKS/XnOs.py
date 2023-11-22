@@ -14,6 +14,12 @@ Boxes = "\U0001F532"
 Xs = "\U0001F380"
 Os = "\U0001F4C0"
 
+# Array for storing arguments
+aguments = [0, 0]
+
+# Turn counter
+game-turn = 0
+
 # Array of play / Reseting board
 Table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 i = 0
@@ -24,13 +30,6 @@ while i < 3:
         x += 1
     i += 1
     x = 0
-
-# Array for storing arguments
-aguments = [0, 0]
-
-# Turn counter
-game-turn = 0
-
 
 # Functions:
 def PrintOutTable():
