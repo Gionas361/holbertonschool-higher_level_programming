@@ -240,7 +240,7 @@ def Turn_Playouts():
 
         if turn == 0:
             turn = 1
-        if turn == 1:
+        elif turn == 1:
             turn = 0
 
 # /////////////////////////////// Tests ///////////////////////////////////
