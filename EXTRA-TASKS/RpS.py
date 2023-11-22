@@ -12,8 +12,6 @@ Paper = "\U0001F4DC"
 Rock = "\U0001F48E"
 aguments = sys.argv
 
-rangame = 0
-
 def RockPaperCut(player):
     # It will print each coin flip based on
     # the number provided but Argument_Check.
@@ -66,6 +64,5 @@ def Argument_Check(aguments):
         print("Please provide a valid word:\n    Rock\n    Paper\n    Scissors\n")
 
 # //////////////////////////// Tests ///////////////////////////
-rangame += 1
-if rangame == 1:
-    Argument_Check(aguments)
+print("Running test START.")
+Argument_Check(aguments)
