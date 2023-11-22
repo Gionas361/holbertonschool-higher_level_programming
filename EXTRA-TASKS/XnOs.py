@@ -107,7 +107,7 @@ def CPU_AI():
     location2 = 0
 
     if gameturn == 3:
-        if (Table[0][1] == Xs or Table[1][0] == Xs or Table[1][2] == Xs or Table[2][1])
+        if (Table[0][1] == Xs or Table[1][0] == Xs or Table[1][2] == Xs or Table[2][1]):
             # Win mode activate
             openslot = 0
 
@@ -124,7 +124,7 @@ def CPU_AI():
                     openslot = 1
             
 
-        if (Table[0][0] == Xs or Table[0][2] == Xs or Table[2][0] == Xs or Table[2][2])
+        if (Table[0][0] == Xs or Table[0][2] == Xs or Table[2][0] == Xs or Table[2][2]):
             # Tie mode activate
             openslot = 0
 
@@ -132,7 +132,7 @@ def CPU_AI():
                 location1 = random.randint(0,2)
                 location2 = random.randint(0,2)
 
-                if (Table[location1][location2] == Boxes)
+                if (Table[location1][location2] == Boxes):
                     Table[location1][location2] = Os
                     openslot = 1
 
