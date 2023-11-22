@@ -17,9 +17,6 @@ Os = "\U0001F4C0"
 # Array for storing arguments
 aguments = [0, 0]
 
-# Turn counter
-game-turn = 0
-
 # Array of play / Reseting board
 Table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 i = 0
@@ -99,7 +96,7 @@ def Win_Check():
     
     return (0)
 
-def CPU_AI():
+def CPU_AI(gameturn):
     location1 = 0
     location2 = 0
 
@@ -136,13 +133,14 @@ def CPU_AI():
 def Turn_Playouts():
     turn = 1
     gameend = 0
+    gameturn = 0
 
     while gameend == 0:
-        game-turn += 1
+        gameturn += 1
 
         if turn == 0:
             print("It's the cpu's turn:")
-            CPU_AI()
+            CPU_AI(gameturn)
             PrintOutTable()
             gamened = Win_Check()
 
@@ -159,6 +157,5 @@ def Turn_Playouts():
 # /////////////////////////////// Tests ///////////////////////////////////
 # First turn always goes to cpu
 Table[1][1] = Os
-game-turn += 1
 PrintOutTable()
 Turn_Playouts()
