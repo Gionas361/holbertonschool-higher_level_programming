@@ -16,9 +16,11 @@ O = "\U0001F4C0"
 
 # Array of play
 Table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-for i in Table:
-    for x in i:
-        Table[int(i)][int(x)] = Boxes
+i = 0
+x = 0
+while i < 3:
+    while x < 3:
+        Table[i][x] = Boxes
         print(x, end = " ")
     print()
 
