@@ -56,6 +56,7 @@ def Argument_Check(aguments):
         # If the number of arguments is the correct amount,
         # We create the array of words and then check if,
         # the word given is Rock, Paper or Scissors.
+        print("Detected correct amount of arguments.")
 
         i = 0
         words = ['ROCK', 'SCISSOR', 'PAPER']
