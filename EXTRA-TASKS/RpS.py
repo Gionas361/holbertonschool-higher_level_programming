@@ -15,7 +15,6 @@ aguments = sys.argv
 def RockPaperCut(amount, player):
     # It will print each coin flip based on
     # the number provided but Argument_Check.
-    print("Ran RPC function.")
 
     i = 0
 
@@ -59,13 +58,13 @@ def Argument_Check(aguments):
         # If the number of arguments is the correct amount,
         # We create the array of words and then check if,
         # the word given is Rock, Paper or Scissors.
-        print("Detected correct amount of arguments.")
 
         if (aguments[2].upper() == 'ROCK' or
            aguments[2].upper() == 'PAPER' or
            aguments[2].upper() == 'SCISSORS'):
             RockPaperCut(int(aguments[1]), aguments[2].upper())
-        print("Please provide a valid word:\n    Rock\n    Paper\n    Scissors\n")
+        else:
+            print("Please provide a valid word:\n    Rock\n    Paper\n    Scissors\n")
 
 # //////////////////////////// Tests ///////////////////////////
 Argument_Check(aguments)
