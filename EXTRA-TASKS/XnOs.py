@@ -57,6 +57,8 @@ def Turn_Check():
         if (Table[aguments[1]-1][aguments[0]-1] == Boxes):
             Table[aguments[1]-1][aguments[0]-1] = Xs
             openslot = 1
+        elif (Table[aguments[1]-1][aguments[0]-1] != Boxes):
+            print("Please select a unocupied slot.")
 
     # If the number of arguments is the correct amount:
     return (int(aguments[0]), int(aguments[1]))
