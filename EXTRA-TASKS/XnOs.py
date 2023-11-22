@@ -113,7 +113,7 @@ def CPU_AI(gameturn, mode):
     curTab = [[69, 69], [69, 69], [69, 69],
               [69, 69], [69, 69], [69, 69],
               [69, 69], [69, 69], [69, 69]]
-    foundpath = []
+    foundpath = [0, 0]
     c1 = 0
     c2 = 0
 
@@ -208,6 +208,7 @@ def CPU_AI(gameturn, mode):
                 w += 1
                 p = 0
                 if addit == 2:
+                    w -= 1
                     p = 0
                     while p < 3:
                         foundpath = [int(i) for i in str(p)]
