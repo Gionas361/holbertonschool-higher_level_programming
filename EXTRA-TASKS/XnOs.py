@@ -227,14 +227,14 @@ def Turn_Playouts():
     while gameend == 0:
         gameturn += 1
 
-        if turn == 0:
+        if turn == 0 and gameend == 0:
             print(f"It's the cpu's turn: [{gameturn}] {mode}")
             mode = CPU_AI(gameturn, mode)
             PrintOutTable()
             gamened = Win_Check()
 
             turn = 1
-        elif turn == 1:
+        elif turn == 1 and gameend == 0:
             print(f"It's the player's turn: [{gameturn}] {mode}")
             Turn_Check()
             PrintOutTable()
