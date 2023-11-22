@@ -57,6 +57,6 @@ def Argument_Check(aguments):
         print("Please provide a valid word:\n    Rock\n    Paper\n    Scissors\n")
 
 # //////////////////////////// Tests ///////////////////////////
-if ran = 0:
+if ran == 0:
     Argument_Check(aguments)
     ran = 1
