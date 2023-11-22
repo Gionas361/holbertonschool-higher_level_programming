@@ -127,7 +127,6 @@ def CPU_AI(gameturn, mode):
         if (Table[0][1] == Xs or Table[1][0] == Xs or Table[1][2] == Xs or Table[2][1] == Xs):
             # Win mode activate
             mode = 'WIN'
-            print(f'{mode}')
 
             if Table[0][1] == Xs:
                 location = random.randint(0,1)
@@ -214,14 +213,14 @@ def Turn_Playouts():
         gameturn += 1
 
         if turn == 0:
-            print(f"It's the cpu's turn: [{gameturn}]", end=" ")
+            print(f"It's the cpu's turn: [{gameturn}] {mode}")
             mode = CPU_AI(gameturn, mode)
             PrintOutTable()
             gamened = Win_Check()
 
             turn = 1
         elif turn == 1:
-            print(f"It's the player's turn: [{gameturn}]")
+            print(f"It's the player's turn: [{gameturn}] {mode}")
             Turn_Check()
             PrintOutTable()
             gameend = Win_Check()
