@@ -153,8 +153,6 @@ def CPU_AI(gameturn, mode):
                     Table[2][0] = Os
                 if location == 1:
                     Table[2][2] = Os
-            
-            return (mode)
 
         if (Table[0][0] == Xs or Table[0][2] == Xs or Table[2][0] == Xs or Table[2][2] == Xs):
             # Tie mode activate
@@ -168,8 +166,6 @@ def CPU_AI(gameturn, mode):
                 if (Table[location1][location2] == Boxes):
                     Table[location1][location2] = Os
                     openslot = 1
-
-            return (mode)
     
     if gameturn == 5:
         if mode == 'WIN':
@@ -204,7 +200,7 @@ def CPU_AI(gameturn, mode):
                     break
                 addit = 0
 
-            return (mode)
+    return (mode)
 
 
 
