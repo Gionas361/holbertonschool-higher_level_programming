@@ -12,37 +12,38 @@ Paper = "\U0001F4DC"
 Rock = "\U0001F48E"
 aguments = sys.argv
 
-def RockPaperCut(player):
+def RockPaperCut(amount, player):
     # It will print each coin flip based on
     # the number provided but Argument_Check.
 
-    Hand = random.randint(0,2)
+    i = 0
 
-    # Losses
-    if Hand == 0 and player == 'ROCK':
-        print(f"The CPU played {Paper}  You played {Rock}. You've {Loss}")
-    elif Hand == 1 and player == 'SCISSOR':
-        print(f"The CPU played {Rock}  You played {Scissor}. You've {Loss}")
-    elif Hand == 2 and player == 'PAPER':
-        print(f"The CPU played {Scissor}  You played {Paper}. You've {Loss}")
+    while i < amount:
+        Hand = random.randint(0,2)
 
-    # Wins
-    elif Hand == 0 and player == 'SCISSOR':
-        print(f"The CPU played {Paper}  You played {Scissor}. You've {Win}")
-    elif Hand == 1 and player == 'PAPER':
-        print(f"The CPU played {Rock}  You played {Paper}. You've {Win}")
-    elif Hand == 2 and player == 'ROCK':
-        print(f"The CPU played {Scissor}  You played {Rock}. You've {Win}")
+        # Losses
+        if Hand == 0 and player == 'ROCK':
+            print(f"The CPU played {Paper}  You played {Rock}. You've {Loss}")
+        elif Hand == 1 and player == 'SCISSOR':
+            print(f"The CPU played {Rock}  You played {Scissor}. You've {Loss}")
+        elif Hand == 2 and player == 'PAPER':
+            print(f"The CPU played {Scissor}  You played {Paper}. You've {Loss}")
 
-    # Ties
-    elif Hand == 0 and player == 'Paper':
-        print(f"The CPU played {Paper}  You played {Paper}. It's a {Tie}")
-    elif Hand == 1 and player == 'ROCK':
-        print(f"The CPU played {Rock}  You played {Rock}. It's a {Tie}")
-    elif Hand == 2 and player == 'ROCK':
-        print(f"The CPU played {Scissor}  You played {Scissor}. It's a {Tie}")
-    
-    exit
+        # Wins
+        elif Hand == 0 and player == 'SCISSOR':
+            print(f"The CPU played {Paper}  You played {Scissor}. You've {Win}")
+        elif Hand == 1 and player == 'PAPER':
+            print(f"The CPU played {Rock}  You played {Paper}. You've {Win}")
+        elif Hand == 2 and player == 'ROCK':
+            print(f"The CPU played {Scissor}  You played {Rock}. You've {Win}")
+
+        # Ties
+        elif Hand == 0 and player == 'Paper':
+            print(f"The CPU played {Paper}  You played {Paper}. It's a {Tie}")
+        elif Hand == 1 and player == 'ROCK':
+            print(f"The CPU played {Rock}  You played {Rock}. It's a {Tie}")
+        elif Hand == 2 and player == 'ROCK':
+            print(f"The CPU played {Scissor}  You played {Scissor}. It's a {Tie}")
 
 def Argument_Check(aguments):
     # It will check that a number is provided.
@@ -62,9 +63,8 @@ def Argument_Check(aguments):
 
         while i <= len(words):
             if aguments[1].upper() == words[i]:
-                RockPaperCut(aguments[1].upper())
+                RockPaperCut(int(aguments[1]), aguments[2].upper())
         print("Please provide a valid word:\n    Rock\n    Paper\n    Scissors\n")
 
 # //////////////////////////// Tests ///////////////////////////
-print("Running test START.")
 Argument_Check(aguments)
