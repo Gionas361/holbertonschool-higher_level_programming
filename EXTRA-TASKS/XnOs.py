@@ -234,18 +234,15 @@ def Turn_Playouts():
             PrintOutTable()
             gamened = Win_Check()
             turn = 1
-        elif turn == 2:
+        elif turn == 1:
             print(f"It's the player's turn: [{gameturn}] {mode}")
             Turn_Check()
             PrintOutTable()
             gameend = Win_Check()
             turn = 0
         
-        if turn == 1:
-            turn = 2
-        
         if gameend == 1:
-                break
+            break
 
 # /////////////////////////////// Tests ///////////////////////////////////
 # First turn always goes to cpu
