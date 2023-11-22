@@ -195,7 +195,7 @@ def CPU_AI(gameturn, mode):
                     print(f'p: {p}')
                     while c < 9:
                         print(f'c: {curTab[c][c2]} {Wpos[w][p]}')
-                        if (curTab[c][c2] == Wpos[w][p]):
+                        if (int(curTab[c][c2]) == int(Wpos[w][p])):
                             if curTab[c][c2+1] != Xs:
                                 addit += 1
                             else:
