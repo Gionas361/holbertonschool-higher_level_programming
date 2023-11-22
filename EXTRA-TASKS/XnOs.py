@@ -113,6 +113,10 @@ def CPU_AI(gameturn, mode):
     c1 = 0
     c2 = 0
 
+    addit = 0
+    i = 0
+    x = 0
+
     if gameturn == 3:
         mode = 0
         if (Table[0][1] == Xs or Table[1][0] == Xs or Table[1][2] == Xs or Table[2][1] == Xs):
@@ -164,9 +168,6 @@ def CPU_AI(gameturn, mode):
     
     if gameturn == 5:
         if mode == 'WIN':
-            addit = 0
-            c1 = 0
-            c2 = 0
             while i < 3:
                 while x < 3:
                     if Table[i][x] != Boxes:
