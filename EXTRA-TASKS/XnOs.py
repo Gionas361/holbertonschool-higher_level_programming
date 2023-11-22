@@ -85,7 +85,7 @@ def Win_Check():
        print("CPU WINS!!!")
        return (1)
 
-    if (
+    elif (
        # Horizontals
        ((Table[0][0] == Xs) and (Table[0][1] == Xs) and (Table[0][2] == Xs)) or
        ((Table[1][0] == Xs) and (Table[1][1] == Xs) and (Table[1][2] == Xs)) or
@@ -101,7 +101,8 @@ def Win_Check():
        print("PLAYER WINS!!!")
        return (1)
     
-    return (0)
+    else:
+        return (0)
 
 def CPU_AI(gameturn, mode):
     # Variable declaration
