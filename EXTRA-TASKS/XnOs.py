@@ -66,15 +66,15 @@ def Turn_Check():
 def Win_Check():
     if (
        # Horizontals
-       ((Table[0][0] == Os) and (Table[0][1] == Os) and (Table[0][2] == Os))
-       ((Table[1][0] == Os) and (Table[1][1] == Os) and (Table[1][2] == Os))
-       ((Table[2][0] == Os) and (Table[2][1] == Os) and (Table[2][2] == Os))
+       ((Table[0][0] == Os) and (Table[0][1] == Os) and (Table[0][2] == Os)) or
+       ((Table[1][0] == Os) and (Table[1][1] == Os) and (Table[1][2] == Os)) or
+       ((Table[2][0] == Os) and (Table[2][1] == Os) and (Table[2][2] == Os)) or
        # Verticals
-       ((Table[0][0] == Os) and (Table[1][0] == Os) and (Table[2][0] == Os))
-       ((Table[0][1] == Os) and (Table[1][1] == Os) and (Table[2][1] == Os))
-       ((Table[0][2] == Os) and (Table[1][2] == Os) and (Table[2][2] == Os))
+       ((Table[0][0] == Os) and (Table[1][0] == Os) and (Table[2][0] == Os)) or
+       ((Table[0][1] == Os) and (Table[1][1] == Os) and (Table[2][1] == Os)) or
+       ((Table[0][2] == Os) and (Table[1][2] == Os) and (Table[2][2] == Os)) or
        # Diagonals
-       ((Table[0][2] == Os) and (Table[1][1] == Os) and (Table[2][0] == Os))
+       ((Table[0][2] == Os) and (Table[1][1] == Os) and (Table[2][0] == Os)) or
        ((Table[0][0] == Os) and (Table[1][1] == Os) and (Table[2][2] == Os))
        ):
        print("CPU WINS!!!")
@@ -82,15 +82,15 @@ def Win_Check():
 
     if (
        # Horizontals
-       ((Table[0][0] == Xs) and (Table[0][1] == Xs) and (Table[0][2] == Xs))
-       ((Table[1][0] == Xs) and (Table[1][1] == Xs) and (Table[1][2] == Xs))
-       ((Table[2][0] == Xs) and (Table[2][1] == Xs) and (Table[2][2] == Xs))
+       ((Table[0][0] == Xs) and (Table[0][1] == Xs) and (Table[0][2] == Xs)) or
+       ((Table[1][0] == Xs) and (Table[1][1] == Xs) and (Table[1][2] == Xs)) or
+       ((Table[2][0] == Xs) and (Table[2][1] == Xs) and (Table[2][2] == Xs)) or
        # Verticals
-       ((Table[0][0] == Xs) and (Table[1][0] == Xs) and (Table[2][0] == Xs))
-       ((Table[0][1] == Xs) and (Table[1][1] == Xs) and (Table[2][1] == Xs))
-       ((Table[0][2] == Xs) and (Table[1][2] == Xs) and (Table[2][2] == Xs))
+       ((Table[0][0] == Xs) and (Table[1][0] == Xs) and (Table[2][0] == Xs)) or
+       ((Table[0][1] == Xs) and (Table[1][1] == Xs) and (Table[2][1] == Xs)) or
+       ((Table[0][2] == Xs) and (Table[1][2] == Xs) and (Table[2][2] == Xs)) or
        # Diagonals
-       ((Table[0][2] == Xs) and (Table[1][1] == Xs) and (Table[2][0] == Xs))
+       ((Table[0][2] == Xs) and (Table[1][1] == Xs) and (Table[2][0] == Xs)) or
        ((Table[0][0] == Xs) and (Table[1][1] == Xs) and (Table[2][2] == Xs))
        ):
        print("PLAYER WINS!!!")
