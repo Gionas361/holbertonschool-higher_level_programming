@@ -36,14 +36,14 @@ def Argument_Check(aguments):
     if len(aguments) > 2:
         return (print("Too many arguments."))
     elif len(aguments) == 1:
-        return (print("Please provide a number of times to flip the coin."))
+        return (print("Please provide the hand you will use against CPU."))
     elif len(aguments) == 2:
         # If the number of arguments is the correct amount,
         # We create the array of words and then check if,
         # the word given is Rock, Paper or Scissors.
 
         i = 0
-        words = [ROCK, SCISSOR, PAPER]
+        words = ['ROCK', 'SCISSOR', 'PAPER']
 
         while i <= len(words):
             if upper(aguments[1]) == words[i]:
