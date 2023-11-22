@@ -11,7 +11,7 @@ Tie = "\U0001F501"
 
 # Moves for players
 Boxes = "\U0001F532"
-X = "\U0001F4A2"
-O = "\U0001F518"
+X = "\U0001F380"
+O = "\U0001F4C0"
 
 print(f'{Boxes} {X} {O}')
