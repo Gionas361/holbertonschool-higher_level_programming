@@ -180,8 +180,8 @@ def CPU_AI(gameturn, mode):
             while i < 3:
                 while x < 3:
                     if Table[i][x] != Boxes:
-                        curTab[c1][c2] = int(f'{i}{x}')
-                        curTab[c1][c2+1] = Table[i][x]
+                        curTab[c1][c2] = int(f'{x}{i}')
+                        curTab[c1][c2+1] = Table[x][i]
                     c1 += 1
                     x += 1
                 i += 1
