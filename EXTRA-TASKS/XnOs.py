@@ -182,7 +182,6 @@ def CPU_AI(gameturn, mode):
                     if Table[i][x] != Boxes:
                         curTab[c1][c2] = int(f'{i}{x}')
                         curTab[c1][c2+1] = Table[i][x]
-                        print(f'{curTab[c1][c2]} {curTab[c1][c2+1]}')
                     c1 += 1
                     x += 1
                 i += 1
@@ -191,8 +190,11 @@ def CPU_AI(gameturn, mode):
             # This determines if the player fucked up and if they did,
             # it will play the move that will win him the game.
             while w <= 8: # Sets of 3 for victory
+                print(f'w: {w}')
                 while p <= 3: # Nums inside the sets
+                    print(f'p: {p}')
                     while c <= 9:
+                        print(f'c: {c}')
                         if curTab[c][c2] == Wpos[w][p]:
                             if curTab[c][c2+1] != Xs:
                                 addit += 1
