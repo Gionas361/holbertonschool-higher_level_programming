@@ -54,8 +54,8 @@ def Turn_Check():
 
         if ((aguments[0] > 3 and aguments[0] < 0) and (aguments[1] > 3 and aguments[1] < 0)):
             print("Please provide values in the range of 1 and 3.\n")
-        if (Table[aguments[1]][aguments[0]] == Boxes):
-            Table[aguments[1]][aguments[0]] = Xs
+        if (Table[aguments[1]-1][aguments[0]-1] == Boxes):
+            Table[aguments[1]-1][aguments[0]-1] = Xs
             openslot = 1
 
     # If the number of arguments is the correct amount:
