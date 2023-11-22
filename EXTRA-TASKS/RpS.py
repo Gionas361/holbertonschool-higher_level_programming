@@ -43,7 +43,7 @@ def Argument_Check(aguments):
         # the word given is Rock, Paper or Scissors.
 
         i = 0
-        words[] = {ROCK, SCISSOR, PAPER}
+        words = [ROCK, SCISSOR, PAPER]
 
         while i <= len(words):
             if upper(aguments[1]) == words[i]:
