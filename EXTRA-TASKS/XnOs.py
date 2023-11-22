@@ -24,8 +24,8 @@ while i < 3:
         print(Table[i][x], end = " ")
         x += 1
     print()
-        i += 1
-        x = 0
+    i += 1
+    x = 0
 
 # Array for storing arguments
 aguments = [0, 0]
