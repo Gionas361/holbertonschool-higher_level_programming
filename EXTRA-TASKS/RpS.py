@@ -15,7 +15,6 @@ aguments = sys.argv
 def RockPaperCut(player):
     # It will print each coin flip based on
     # the number provided but Argument_Check.
-    print("Ran RockPaperCut.")
 
     Hand = random.randint(0,2)
 
@@ -42,13 +41,9 @@ def RockPaperCut(player):
         print(f"The CPU played {Rock} you played {Rock}. It's a {Tie}")
     elif Hand == 2 and player == 'ROCK':
         print(f"The CPU played {Scissor} you played {Scissor}. It's a {Tie}")
-    
-    sys.argv = ''
-
 
 def Argument_Check(aguments):
     # It will check that a number is provided.
-    print("Ran Argument_Check.")
 
     if len(aguments) > 2:
         return (print("Too many arguments."))
@@ -62,7 +57,6 @@ def Argument_Check(aguments):
 
         i = 0
         words = ['ROCK', 'SCISSOR', 'PAPER']
-        print("Created the array.")
 
         while i <= len(words):
             if aguments[1].upper() == words[i]:
