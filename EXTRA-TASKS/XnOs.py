@@ -118,6 +118,9 @@ def CPU_AI(gameturn, mode):
     addit = 0
     i = 0
     x = 0
+    w = 0
+    p = 0
+    c = 0
 
     if gameturn == 3:
         mode = 0
@@ -181,16 +184,21 @@ def CPU_AI(gameturn, mode):
                 i += 1
                 x = 0
 
-            for w in Wpos: # Sets of 3 for victory
-                for p in w: # Nums inside the sets
-                    for c in curTab:
+            while w <= 8: # Sets of 3 for victory
+                while p <= 3: # Nums inside the sets
+                    while c <= 9:
                         if curTab[c][0] == Wpos[w][p]:
                             if curTab[c][1] != Xs:
                                 addit += 1
                             else:
                                 addit -= 1
-                if addit == 3:
-                    for p in w:
+                        c += 1
+                    p += 1
+                    c = 0
+                w += 1
+                p = 0
+                if addit == 2:
+                    while p <= 3:
                         foundpath = [int(i) for i in str(p)]
                         Table[foundpath[0]][foundpath[1]] = Os
                     break
