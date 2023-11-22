@@ -6,12 +6,10 @@ import sys
 # Variables containin the emojis the guide to reading the results
 Win = "\U0001F31D"
 Loss = "\U0001F31A"
-Scissor = "\U00012702"
+Scissor = "\U0002702"
 Paper = "\U0001F4DC"
 Rock = "\U0001F48E"
 aguments = sys.argv
-
-ran = 0
 
 def RockPaperCut(player):
     # It will print each coin flip based on
@@ -32,8 +30,9 @@ def RockPaperCut(player):
         print(f"The CPU played {Rock} you played {Paper}. You've {Win}")
     elif Hand == 2 and player == 'ROCK':
         print(f"The CPU played {Scissor} you played {Rock}. You've {Win}")
+    
+    sys.argv = ''
 
-    ran = 1
 
 def Argument_Check(aguments):
     # It will check that a number is provided.
@@ -59,5 +58,4 @@ def Argument_Check(aguments):
         print("Please provide a valid word:\n    Rock\n    Paper\n    Scissors\n")
 
 # //////////////////////////// Tests ///////////////////////////
-if ran == 0:
-    Argument_Check(aguments)
+Argument_Check(aguments)
