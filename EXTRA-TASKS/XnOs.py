@@ -180,8 +180,8 @@ def CPU_AI(gameturn, mode):
             while i < 3:
                 while x < 3:
                     if Table[i][x] != Boxes:
-                        curTab[c1][c2] = int(f'{x}{i}')
-                        curTab[c1][c2+1] = Table[x][i]
+                        curTab[c1][c2] = int(f'{i}{x}')
+                        curTab[c1][c2+1] = Table[i][x]
                     c1 += 1
                     x += 1
                 i += 1
@@ -191,6 +191,7 @@ def CPU_AI(gameturn, mode):
             # it will play the move that will win him the game.
             while w < 8: # Sets of 3 for victory
                 print(f'w: {w}')
+                addit = 0
                 while p < 3: # Nums inside the sets
                     print(f'p: {p}')
                     while c < 9:
@@ -212,7 +213,6 @@ def CPU_AI(gameturn, mode):
                         foundpath = [int(i) for i in str(p)]
                         Table[foundpath[0]][foundpath[1]] = Os
                     break
-                addit = 0
 
     return (mode)
 
