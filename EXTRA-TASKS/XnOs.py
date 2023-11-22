@@ -14,4 +14,16 @@ Boxes = "\U0001F532"
 X = "\U0001F380"
 O = "\U0001F4C0"
 
-print(f'{Boxes} {X} {O}')
+# Array of play
+Table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+for i in Table:
+    for x in i:
+        Table[i][x] = Boxes
+        print(x, end = " ")
+    print()
+
+def TurnPlayouts():
+    turn = 0
+
+    if turn == 0:
+        p
