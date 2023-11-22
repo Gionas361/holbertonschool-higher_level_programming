@@ -232,17 +232,16 @@ def Turn_Playouts():
             mode = CPU_AI(gameturn, mode)
             PrintOutTable()
             gamened = Win_Check()
-            if gameend == 1:
-                break
             turn = 1
         elif turn == 1:
             print(f"It's the player's turn: [{gameturn}] {mode}")
             Turn_Check()
             PrintOutTable()
             gameend = Win_Check()
-            if gameend == 1:
-                break
             turn = 0
+        
+        if gameend == 1:
+                break
 
 # /////////////////////////////// Tests ///////////////////////////////////
 # First turn always goes to cpu
