@@ -80,7 +80,7 @@ def Win_Check():
        # Diagonals
        ((Table[0][2] == Os) and (Table[1][1] == Os) and (Table[2][0] == Os))
        ((Table[0][0] == Os) and (Table[1][1] == Os) and (Table[2][2] == Os))
-       )
+       ):
        print("CPU WINS!!!")
        return (1)
 
@@ -96,7 +96,7 @@ def Win_Check():
        # Diagonals
        ((Table[0][2] == Xs) and (Table[1][1] == Xs) and (Table[2][0] == Xs))
        ((Table[0][0] == Xs) and (Table[1][1] == Xs) and (Table[2][2] == Xs))
-       )
+       ):
        print("PLAYER WINS!!!")
        return (1)
     
