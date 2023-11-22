@@ -18,7 +18,7 @@ O = "\U0001F4C0"
 Table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 for i in Table:
     for x in i:
-        Table[i][x] = Boxes
+        Table[int(i)][int(x)] = Boxes
         print(x, end = " ")
     print()
 
