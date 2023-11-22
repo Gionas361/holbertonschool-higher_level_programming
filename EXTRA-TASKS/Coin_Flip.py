@@ -13,11 +13,11 @@ def Flips(amount):
     i = 0
 
     while i < amount:
-        Head_or_Tails = random.randint(0,99)
+        Head_or_Tails = random.randint(0,1)
 
-        if Head_or_Tails ** 0 == 1:
+        if Head_or_Tails == 0:
             print('The coin number', i+1, 'landed on \U0001F31D')
-        elif Head_or_Tails ** 1 == 1:
+        elif Head_or_Tails == 1:
             print('The coin number', i+1, 'landed on \U0001F31A')
 
         i += 1
