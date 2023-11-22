@@ -213,7 +213,7 @@ def CPU_AI(gameturn, mode):
                                 foundpath[0] = 0
                                 foundpath[1] = Wpos[w][p]
                                 print('yesy', foundpath[0], foundpath[1])
-                            else:
+                            elif p > 10:
                                 foundpath = [int(i) for i in str(Wpos[w][p])]
                                 print('nopy', foundpath[0], foundpath[1])
                             Table[int(foundpath[0])][int(foundpath[1])] = Os
