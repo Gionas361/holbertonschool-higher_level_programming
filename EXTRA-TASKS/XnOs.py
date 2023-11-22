@@ -17,6 +17,11 @@ Os = "\U0001F4C0"
 # Array for storing arguments
 aguments = [0, 0]
 
+# Array with win positions
+Wpos = [['00', '01', '02'], ['10', '11', '12'], ['20', '21', '22'],
+        ['00', '10', '20'], ['01', '11', '21'], ['02', '12', '22'],
+        ['02', '11', '20'], ['00', '11', '22']]
+
 # Array of play / Reseting board
 Table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 i = 0
@@ -101,28 +106,48 @@ def Win_Check():
 def CPU_AI(gameturn):
     location1 = 0
     location2 = 0
+    location = 0
+    mode = 0
+
+    curTab = []
+    foundpath = []
+    c1 = 0
+    c2 = 0
 
     if gameturn == 3:
         if (Table[0][1] == Xs or Table[1][0] == Xs or Table[1][2] == Xs or Table[2][1]):
             # Win mode activate
-            openslot = 1
+            mode = 'WIN'
 
-            while openslot != 1:
-                location1 = random.randint(0,1)
-                if location1 == 1:
-                    location1 == 2
-                location2 = random.randint(0,1)
-                if location2 == 1:
-                    location2 == 2
-
-                if (Table[location1][location2] == Boxes):
-                    Table[location1][location2] = Os
-                    openslot = 1
-            
+            if Table[0][1] == Xs:
+                location = random.randint(0,1)
+                if location == 0:
+                    Table[0][0] = Os
+                if location == 1:
+                    Table[0][2] = Os
+            if Table[1][0] == Xs:
+                location = random.randint(0,1)
+                if location == 0:
+                    Table[0][0] = Os
+                if location == 1:
+                    Table[2][0] = Os
+            if Table[1][2] == Xs:
+                location = random.randint(0,1)
+                if location == 0:
+                    Table[0][2] = Os
+                if location == 1:
+                    Table[2][2] = Os
+            if Table[2][1] == Xs:
+                location = random.randint(0,1)
+                if location == 0:
+                    Table[2][0] = Os
+                if location == 1:
+                    Table[2][2] = Os
 
         if (Table[0][0] == Xs or Table[0][2] == Xs or Table[2][0] == Xs or Table[2][2]):
             # Tie mode activate
             openslot = 0
+            mode = 'TIE'
 
             while openslot != 1:
                 location1 = random.randint(0,2)
@@ -131,6 +156,42 @@ def CPU_AI(gameturn):
                 if (Table[location1][location2] == Boxes):
                     Table[location1][location2] = Os
                     openslot = 1
+    
+    if gameturn == 5:
+        if mode == 'WIN':
+            addit = 0
+            c1 = 0
+            c2 = 0
+            while i < 3:
+                while x < 3:
+                    if Table[i][x] != Boxes:
+                        curTab[c1][c2].append(int(f'{i}{x}'))
+                        curTab[c1][c2+1].append(Table[i][x])
+                    c1 += 1
+                    x += 1
+                i += 1
+                x = 0
+
+            for w in Wpos: # Sets of 3 for victory
+                for p in w: # Nums inside the sets
+                    for c in curTab:
+                        if curTab[c][0] == Wpos[w][p]:
+                            if curTab[c][1] != Xs:
+                                addit += 1
+                            else:
+                                addit -= 1
+                if addit == 3:
+                    for p in w:
+                        foundpath = [int(i) for i in str(p)]
+                        Table[foundpath[0]][foundpath[1]] = Os
+                    break:
+                addit = 0
+                    
+                        
+
+
+
+        if mode == 'TIE':
 
 def Turn_Playouts():
     turn = 1
