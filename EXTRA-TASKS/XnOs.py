@@ -135,7 +135,7 @@ def CPU_AI(gameturn):
 def Turn_Playouts():
     turn = 1
     gameend = 0
-    gameturn = 0
+    gameturn = 1
 
     while gameend == 0:
         gameturn += 1
