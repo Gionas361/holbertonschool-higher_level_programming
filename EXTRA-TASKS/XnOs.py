@@ -140,7 +140,7 @@ def Turn_Playouts():
     turn = 1
     gameend = 0
 
-    while gameend = 0:
+    while gameend == 0:
         gameturn += 1
 
         if turn == 0:
