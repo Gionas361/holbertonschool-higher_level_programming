@@ -205,15 +205,20 @@ def CPU_AI(gameturn, mode):
                         c += 1
                     p += 1
                     c = 0
+                    if addit == 2:
+                        p = 0
+                        while p < 3:
+                            if int(p) < 10:
+                                foundpath[0] = 0
+                                foundpath[1] = p
+                            else:
+                                foundpath = [int(i) for i in str(p)]
+                                print(foundpath[0], foundpath[1])
+                            Table[foundpath[0]][foundpath[1]] = Os
+
+                            break
                 w += 1
                 p = 0
-                if addit == 2:
-                    w -= 1
-                    p = 0
-                    while p < 3:
-                        foundpath = [int(i) for i in str(p)]
-                        Table[foundpath[0]][foundpath[1]] = Os
-                    break
 
     return (mode)
 
