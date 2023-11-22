@@ -115,7 +115,7 @@ def CPU_AI(gameturn):
     c2 = 0
 
     if gameturn == 3:
-        if (Table[0][1] == Xs or Table[1][0] == Xs or Table[1][2] == Xs or Table[2][1]):
+        if (Table[0][1] == Xs or Table[1][0] == Xs or Table[1][2] == Xs or Table[2][1] == Xs):
             # Win mode activate
             mode = 'WIN'
 
@@ -144,7 +144,7 @@ def CPU_AI(gameturn):
                 if location == 1:
                     Table[2][2] = Os
 
-        if (Table[0][0] == Xs or Table[0][2] == Xs or Table[2][0] == Xs or Table[2][2]):
+        if (Table[0][0] == Xs or Table[0][2] == Xs or Table[2][0] == Xs or Table[2][2] == Xs):
             # Tie mode activate
             openslot = 0
             mode = 'TIE'
