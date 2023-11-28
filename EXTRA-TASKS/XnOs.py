@@ -101,6 +101,13 @@ def Win_Check():
        print("PLAYER WINS!!!")
        return (1)
 
+    elif ((Table[0][0] != Boxes) and (Table[0][1] != Boxes) and (Table[0][2] != Boxes) and
+          (Table[1][0] != Boxes) and (Table[1][1] != Boxes) and (Table[1][2] != Boxes) and
+          (Table[2][0] != Boxes) and (Table[1][2] != Boxes) and (Table[2][2] != Boxes)
+          ):
+        print("IT'S A TIE!!!")
+        return (1)
+
     else:
         return (0)
 
@@ -118,6 +125,7 @@ def CPU_AI(gameturn, mode):
     c1 = 0
     c2 = 0
 
+    openslot = 0
     addit = 0
     i = 0
     x = 0
@@ -160,7 +168,6 @@ def CPU_AI(gameturn, mode):
 
         if (Table[0][0] == Xs or Table[0][2] == Xs or Table[2][0] == Xs or Table[2][2] == Xs):
             # Tie mode activate
-            openslot = 0
             mode = 'TIE'
 
             # It will result in CPU choosing any random position not already taken,
@@ -202,16 +209,17 @@ def CPU_AI(gameturn, mode):
                         c += 1
                     p += 1
                     c = 0
-                    if addit == 2:
-                        p = 0
-                        while p < 3:
-                            if int(Wpos[w][p]) < 10:
-                                foundpath[0] = 0
-                                foundpath[1] = Wpos[w][p]
-                            elif int(Wpos[w][p]) > 10:
-                                foundpath = [int(i) for i in str(Wpos[w][p])]
-                            Table[int(foundpath[0])][int(foundpath[1])] = Os
-                            p += 1
+                if addit == 2:
+                    p = 0
+                    while p < 3:
+                        if int(Wpos[w][p]) < 10:
+                            foundpath[0] = 0
+                            foundpath[1] = Wpos[w][p]
+                        elif int(Wpos[w][p]) > 10:
+                            foundpath = [int(i) for i in str(Wpos[w][p])]
+                        Table[int(foundpath[0])][int(foundpath[1])] = Os
+                        p += 1
+                    return (mode)
                 w += 1
                 p = 0
 
@@ -254,6 +262,60 @@ def CPU_AI(gameturn, mode):
                         Table[2][1] = Os
                         return (mode)
 
+        if mode == 'TIE':
+
+            # It will store where each player has put a mark
+            while i < 3:
+                while x < 3:
+                    if Table[i][x] != Boxes:
+                        curTab[c1][c2] = int(f'{i}{x}')
+                        curTab[c1][c2+1] = Table[i][x]
+                    c1 += 1
+                    x += 1
+                i += 1
+                x = 0
+
+            # This will block any line that would give them the victory.
+            while w < 8: # Sets of 3 for victory
+                addit = 0
+                while p < 3: # Nums inside the sets
+                    while c < 9:
+                        if (int(curTab[c][c2]) == int(Wpos[w][p])):
+                            if curTab[c][c2+1] != Os:
+                                addit += 1
+                            elif curTab[c][c2+1] == Os:
+                                addit -= 1
+                        c += 1
+                    p += 1
+                    c = 0
+                if addit == 2:
+                    print('Ran addit')
+                    p = 0
+                    while p < 3:
+                        if int(Wpos[w][p]) < 10:
+                            foundpath[0] = 0
+                            foundpath[1] = Wpos[w][p]
+                        elif int(Wpos[w][p]) > 10:
+                            foundpath = [int(i) for i in str(Wpos[w][p])]
+                        if Table[int(foundpath[0])][int(foundpath[1])] == Boxes:
+                            Table[int(foundpath[0])][int(foundpath[1])] = Os
+                        p += 1
+                    return (mode)
+                w += 1
+                p = 0
+
+            # It will result in CPU choosing any random position not already taken,
+            # if it is taken it will just generate another slot to play in.
+            while openslot != 1:
+                print('Ran randdit')
+                location1 = random.randint(0,2)
+                location2 = random.randint(0,2)
+
+                if (Table[location1][location2] == Boxes):
+                    Table[location1][location2] = Os
+                    openslot = 1
+                    return (mode)
+
     # Turn 7 actions
     if gameturn == 7:
         if mode == 'WIN':
@@ -269,7 +331,7 @@ def CPU_AI(gameturn, mode):
                 i += 1
                 x = 0
 
-            # In this turn, this just guarantees the dub.
+            # In this turm it just guarantees that the CPU gets the dub
             while w < 8: # Sets of 3 for victory
                 addit = 0
                 while p < 3: # Nums inside the sets
@@ -282,22 +344,129 @@ def CPU_AI(gameturn, mode):
                         c += 1
                     p += 1
                     c = 0
-                    if addit == 2:
-                        p = 0
-                        while p < 3:
-                            if int(Wpos[w][p]) < 10:
-                                foundpath[0] = 0
-                                foundpath[1] = Wpos[w][p]
-                            elif int(Wpos[w][p]) > 10:
-                                foundpath = [int(i) for i in str(Wpos[w][p])]
-                            Table[int(foundpath[0])][int(foundpath[1])] = Os
-                            p += 1
+                if addit == 2:
+                    p = 0
+                    while p < 3:
+                        if int(Wpos[w][p]) < 10:
+                            foundpath[0] = 0
+                            foundpath[1] = Wpos[w][p]
+                        elif int(Wpos[w][p]) > 10:
+                            foundpath = [int(i) for i in str(Wpos[w][p])]
+                        Table[int(foundpath[0])][int(foundpath[1])] = Os
+                        p += 1
+                    return (mode)
                 w += 1
                 p = 0
 
+        if mode == 'TIE':
+
+            # It will store where each player has put a mark
+            while i < 3:
+                while x < 3:
+                    if Table[i][x] != Boxes:
+                        curTab[c1][c2] = int(f'{i}{x}')
+                        curTab[c1][c2+1] = Table[i][x]
+                    c1 += 1
+                    x += 1
+                i += 1
+                x = 0
+
+            # This will block any line that would give them the victory.
+            while w < 8: # Sets of 3 for victory
+                addit = 0
+                while p < 3: # Nums inside the sets
+                    while c < 9:
+                        if (int(curTab[c][c2]) == int(Wpos[w][p])):
+                            if curTab[c][c2+1] != Os:
+                                addit += 1
+                            elif curTab[c][c2+1] == Os:
+                                addit -= 1
+                        c += 1
+                    p += 1
+                    c = 0
+                if addit == 2:
+                    p = 0
+                    while p < 3:
+                        if int(Wpos[w][p]) < 10:
+                            foundpath[0] = 0
+                            foundpath[1] = Wpos[w][p]
+                        elif int(Wpos[w][p]) > 10:
+                            foundpath = [int(i) for i in str(Wpos[w][p])]
+                        if Table[int(foundpath[0])][int(foundpath[1])] == Boxes:
+                            Table[int(foundpath[0])][int(foundpath[1])] = Os
+                        p += 1
+                    return (mode)
+                w += 1
+                p = 0
+
+            # It will result in CPU choosing any random position not already taken,
+            # if it is taken it will just generate another slot to play in.
+            while openslot != 1:
+                location1 = random.randint(0,2)
+                location2 = random.randint(0,2)
+
+                if (Table[location1][location2] == Boxes):
+                    Table[location1][location2] = Os
+                    openslot = 1
+                    return (mode)
+
+    # Turn 9 actions
+    if gameturn == 9:
+        # There is only TIE here bcs WIN will always win on turn 7
+
+        if mode == 'TIE':
+
+            # It will store where each player has put a mark
+            while i < 3:
+                while x < 3:
+                    if Table[i][x] != Boxes:
+                        curTab[c1][c2] = int(f'{i}{x}')
+                        curTab[c1][c2+1] = Table[i][x]
+                    c1 += 1
+                    x += 1
+                i += 1
+                x = 0
+
+            # This will block any line that would give them the victory.
+            while w < 8: # Sets of 3 for victory
+                addit = 0
+                while p < 3: # Nums inside the sets
+                    while c < 9:
+                        if (int(curTab[c][c2]) == int(Wpos[w][p])):
+                            if curTab[c][c2+1] != Os:
+                                addit += 1
+                            elif curTab[c][c2+1] == Os:
+                                addit -= 1
+                        c += 1
+                    p += 1
+                    c = 0
+                if addit == 2:
+                    p = 0
+                    while p < 3:
+                        if int(Wpos[w][p]) < 10:
+                            foundpath[0] = 0
+                            foundpath[1] = Wpos[w][p]
+                        elif int(Wpos[w][p]) > 10:
+                            foundpath = [int(i) for i in str(Wpos[w][p])]
+                        if Table[int(foundpath[0])][int(foundpath[1])] == Boxes:
+                            Table[int(foundpath[0])][int(foundpath[1])] = Os
+                        p += 1
+                    return (mode)
+                w += 1
+                p = 0
+
+            # It will result in CPU choosing any random position not already taken,
+            # if it is taken it will just generate another slot to play in.
+            while openslot != 1:
+                location1 = random.randint(0,2)
+                location2 = random.randint(0,2)
+
+                if (Table[location1][location2] == Boxes):
+                    Table[location1][location2] = Os
+                    openslot = 1
+                    return (mode)
+
     return (mode)
-
-
 
 def Turn_Playouts():
     turn = 1
