@@ -254,6 +254,47 @@ def CPU_AI(gameturn, mode):
                         Table[2][1] = Os
                         return (mode)
 
+    # Turn 7 actions
+    if gameturn == 7:
+        if mode == 'WIN':
+
+            # It will store where each player has put a mark
+            while i < 3:
+                while x < 3:
+                    if Table[i][x] != Boxes:
+                        curTab[c1][c2] = int(f'{i}{x}')
+                        curTab[c1][c2+1] = Table[i][x]
+                    c1 += 1
+                    x += 1
+                i += 1
+                x = 0
+
+            # In this turn, this just guarantees the dub.
+            while w < 8: # Sets of 3 for victory
+                addit = 0
+                while p < 3: # Nums inside the sets
+                    while c < 9:
+                        if (int(curTab[c][c2]) == int(Wpos[w][p])):
+                            if curTab[c][c2+1] != Xs:
+                                addit += 1
+                            elif curTab[c][c2+1] == Xs:
+                                addit -= 1
+                        c += 1
+                    p += 1
+                    c = 0
+                    if addit == 2:
+                        p = 0
+                        while p < 3:
+                            if int(Wpos[w][p]) < 10:
+                                foundpath[0] = 0
+                                foundpath[1] = Wpos[w][p]
+                            elif int(Wpos[w][p]) > 10:
+                                foundpath = [int(i) for i in str(Wpos[w][p])]
+                            Table[int(foundpath[0])][int(foundpath[1])] = Os
+                            p += 1
+                w += 1
+                p = 0
+
     return (mode)
 
 
