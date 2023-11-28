@@ -100,7 +100,7 @@ def Win_Check():
        ):
        print("PLAYER WINS!!!")
        return (1)
-    
+
     else:
         return (0)
 
@@ -172,7 +172,7 @@ def CPU_AI(gameturn, mode):
                 if (Table[location1][location2] == Boxes):
                     Table[location1][location2] = Os
                     openslot = 1
-    
+
     # Turn 5 actions
     if gameturn == 5:
         if mode == 'WIN':
@@ -214,8 +214,45 @@ def CPU_AI(gameturn, mode):
                             p += 1
                 w += 1
                 p = 0
-            
-            if 
+
+            if addit != 2:
+                # If they didnt mess up, we check which is our current
+                # state so that we can make an unwinable table.
+                if Table[0][0] == Os and Table[1][1] == Os:
+                    # Top Left
+                    if Table[0][1] == Xs:
+                        Table[1][0] = Os
+                        return( mode)
+                    elif Table[1][0] == Xs:
+                        Table[0][1] = Os
+                        return (mode)
+
+                if Table[2][0] == Os and Table[1][1] == Os:
+                    # Bottom Left
+                    if Table[2][1] == Xs:
+                        Table[1][0] = Os
+                        return( mode)
+                    elif Table[1][0] == Xs:
+                        Table[2][1] = Os
+                        return (mode)
+
+                elif Table[0][2] == Os and Table[1][1] == Os:
+                    # Top Right
+                    if Table[0][1] == Xs:
+                        Table[1][2] = Os
+                        return( mode)
+                    elif Table[1][2] == Xs:
+                        Table[0][1] = Os
+                        return (mode)
+
+                elif Table[2][2] == Os and Table[1][1] == Os:
+                    # Bottom Right
+                    if Table[2][1] == Xs:
+                        Table[1][2] = Os
+                        return( mode)
+                    elif Table[1][2] == Xs:
+                        Table[2][1] = Os
+                        return (mode)
 
     return (mode)
 
