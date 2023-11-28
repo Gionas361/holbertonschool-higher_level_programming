@@ -197,7 +197,7 @@ def CPU_AI(gameturn, mode):
                         if (int(curTab[c][c2]) == int(Wpos[w][p])):
                             if curTab[c][c2+1] != Xs:
                                 addit += 1
-                            else:
+                            elif curTab[c][c2+1] == Xs:
                                 addit -= 1
                         c += 1
                     p += 1
@@ -214,6 +214,8 @@ def CPU_AI(gameturn, mode):
                             p += 1
                 w += 1
                 p = 0
+            
+            if 
 
     return (mode)
 
