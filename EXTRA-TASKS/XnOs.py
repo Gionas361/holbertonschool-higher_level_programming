@@ -478,13 +478,13 @@ def Turn_Playouts():
         gameturn += 1
 
         if turn == 0:
-            print(f"It's the cpu's turn: [{gameturn}] {mode}")
+            print(f"It's the cpu's turn: [{gameturn}]")
             mode = CPU_AI(gameturn, mode)
             PrintOutTable()
             gameend = Win_Check()
             turn = 1
         elif turn == 1:
-            print(f"It's the player's turn: [{gameturn}] {mode}")
+            print(f"It's the player's turn: [{gameturn}]")
             Turn_Check()
             PrintOutTable()
             gameend = Win_Check()
@@ -492,7 +492,6 @@ def Turn_Playouts():
 
 # /////////////////////////////// Tests ///////////////////////////////////
 # First turn always goes to cpu
-print("starto testo")
 Table[1][1] = Os
 PrintOutTable()
 Turn_Playouts()
