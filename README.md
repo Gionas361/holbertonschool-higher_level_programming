@@ -1,4 +1,4 @@
-Holberton School - Higher Level Programming
+# Holberton School - Higher Level Programming
 
 Welcome to the Higher Level Programming repository for Holberton School! This repository contains various projects and assignments completed during the Higher Level Programming track at Holberton School.
 Table of Contents
@@ -11,7 +11,7 @@ Table of Contents
     Contributing
     License
 
-About
+# About
 
 In this repository, you will find projects and assignments covering a wide range of topics in higher-level programming languages, including Python, JavaScript, and more. Each project is designed to help students develop a strong understanding of programming concepts and principles.
 Projects
@@ -30,7 +30,7 @@ Requirements
     JavaScript (if applicable)
     Any additional requirements specific to individual projects will be mentioned in their respective directories.
 
-Installation
+# Installation
 
 To get started with the projects in this repository, simply clone the repository to your local machine:
 
@@ -38,7 +38,7 @@ bash
 
 git clone https://github.com/Gionas361/holbertonschool-higher_level_programming.git
 
-Usage
+# Usage
 
 Each project directory contains its own set of instructions and requirements. Navigate to the project you're interested in and follow the README.md file for specific usage instructions.
 Contributing
